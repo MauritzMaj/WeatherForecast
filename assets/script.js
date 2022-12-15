@@ -31,6 +31,7 @@ function clickableLists(event) {
     let cards = document.querySelectorAll('.card-body');
     for (i = 0; i < cards.length; i++) {
         cards[i].innerHTML = '';
+        forecastContainerEl.innerHTML='';
     }
     getWeather(City);
     getForecast(City);
