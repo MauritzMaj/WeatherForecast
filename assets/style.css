@@ -54,9 +54,12 @@
     }
 
 
-
 }
 
+.card-text{
+
+    font-size: medium;
+}
 .card.bg-primary.text-white{
 margin: 5px;
 }
