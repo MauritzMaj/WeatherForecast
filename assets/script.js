@@ -127,7 +127,7 @@ function getWeather(cityName) {
         .then(function (data) {
             var lat =data.coord.lat
             var lon = data.coord.lon
-            var forecastQueryurl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&cnt=5&appid=" + APIKey + "&units=imperial";
+            var forecastQueryurl = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey + "&units=imperial";
     
     
             fetch(forecastQueryurl)
@@ -137,6 +137,7 @@ function getWeather(cityName) {
             })
         
             .then(function (data) {for (var i = 0; i < data.list.length; i++) {
+                if (data.list[i].dt_txt.includes("12:00:00")) {
                 var cards = document.createElement('div');
 
                 var cardContainer = document.createElement('div');
@@ -175,7 +176,7 @@ function getWeather(cityName) {
                 cards.appendChild(cardContainer);
                 forecastContainerEl.appendChild(cardContainer);
             
-            }})})
+            }}})})
     
 
         }
