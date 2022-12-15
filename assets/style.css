@@ -1,0 +1,62 @@
+.hero {
+    background: linear-gradient(rgb(161, 144, 144), rgb(51, 51, 174));
+    font-weight: 500;
+}
+
+.btn {
+    background-color:rgb(11, 155, 222);
+    color:aliceblue;
+    font-style: oblique;
+    font-weight: 500;
+    border-radius: 10%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    margin: 2px;
+    
+}
+
+.form-input{
+    max-width: 50%;
+}
+
+.list-group-item{
+    border: 2px solid rgb(15, 42, 91);
+    font-size: large;
+    border-radius: 10px;
+    text-align: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 0 0 30%;
+    margin: 4px;
+
+}
+
+.list-group-item:hover{
+    background-color: aqua;
+    cursor:pointer;
+}
+
+
+
+
+@media only screen and (min-width: 600px) {
+#forecast{
+    display: flex;
+    flex-flow: row;
+
+}}
+
+@media screen and (min-width: 768px) and (max-width:1000px) {
+    
+    #forecast {
+        display: flex;
+        flex-flow:row;
+        flex-wrap:wrap;
+    }
+
+
+
+}
+
+.card.bg-primary.text-white{
+margin: 5px;
+}

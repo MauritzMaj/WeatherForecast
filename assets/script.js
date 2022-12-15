@@ -15,7 +15,14 @@ var searchHistory;
 var historybutton = document.createElement("button");
 
 
+var saveSearch= function(){
+    var cityName = cityInputEl.value.trim();
 
+    if(!searchHistory.includes(cityName)){
+        searchHistory.push(cityName);
+        localStorage.setItem("history", JSON.stringify(searchHistory))
+    }
+}
 
 var renderSearch = function(){
     searchHistory.forEach(cityName => {
@@ -25,6 +32,12 @@ var renderSearch = function(){
     item.addEventListener('click', clickableLists)
     searchedCities.appendChild(item)
 })}
+
+var clearSearch = function(){
+    forecastContainerEl.innerHTML='';
+    searchedCities.innerHTML='';
+
+}
 
 function clickableLists(event) {
     const City = event.target.textContent;
@@ -46,8 +59,10 @@ var SearchHandler = function (event) {
     if (cityName !=="") {
       getWeather(cityName);
       getForecast(cityName);
-      //saveSearch();
-      //addSearch();
+      clearSearch();
+      saveSearch();
+      renderSearch();
+      
 
     } else {
       alert('Please enter a valid city name');
@@ -75,7 +90,7 @@ function getWeather(cityName) {
         cardHeader.textContent = data.name + " - " + dayjs().format('MMM,DD,YYYY')
 
         var container = document.createElement("div");
-        container.className = "card";
+        container.className = "card bg-light";
 
         var card = document.createElement("div");
         card.className = "card-body";
@@ -177,7 +192,7 @@ function getWeather(cityName) {
                 forecastContainerEl.appendChild(cardContainer);
             
             }}})})
-    
+
 
         }
             

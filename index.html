@@ -16,31 +16,35 @@
 
 <body>
 
- <header class="hero">
+ <header class="hero text-center text-white p-2">
     <h1 class="title">Weather Dashboard</h1>
     <p> Which city would you like to see the current weather and forecast for?</p>
   </header>
 
-<main>
-      <div class="card">
-        <h3 class="card-header text-uppercase">Search for a City:</h3>
-        <form id="form" class="form-card">
-          <input name="city" id="city" type="text" class="form-input" placeholder="e.g.New York"/>
+<main class="container-fluid">
+
+  <div class="row">
+      <div class="card col-lg-3 col-md-4 col-sm-12">
+        
+        <form id="form" class="form-card p-3 text-center">
+          <h3 class="card-header text-uppercase bg-transparent text-dark">Search for a City:</h3>
+          <input name="city" id="city" type="text" class="form-input ml-10 mt-2" placeholder="e.g.New York"/>
           <button type="submit" id="searchbtn" class="btn">Search</button>
         </form>
+  
+      <div class="card col-lg-10 col-md-8 col-sm-12">
+        <ul id="history" class="search-history mt-1 "></ul>
       </div>
-
-      <div class="card">
-        <ul id="history" class="search-history"></ul>
     </div>
 
-    <div>
+  
+     <div class="col-lg-6 col-md-8 col-sm-12 flex-column">
         <div id="current-weather"></div>
+        <div id="forecast" class="mt-4 col-12"></div>
+      </div>
     </div>
 
-    <div>
-        <div id="forecast"></div>
-    </div>
+      
 
 </main>
 
