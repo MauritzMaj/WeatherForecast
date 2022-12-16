@@ -72,7 +72,7 @@ var SearchHandler = function (event) {
 
 function getWeather(cityName) {
     //var cityName = cityInputEl.value.trim();
-    var weatherQueryurl = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey + "&units=imperial";
+    var weatherQueryurl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey + "&units=imperial";
 
     fetch(weatherQueryurl)
 
@@ -111,7 +111,7 @@ function getWeather(cityName) {
 
     var imgEl = document.createElement("img");
     var weatherIcon = data.weather[0].icon;
-    imgEl.setAttribute("src", "http://openweathermap.org/img/w/" + weatherIcon + ".png");
+    imgEl.setAttribute("src", "https://openweathermap.org/img/w/" + weatherIcon + ".png");
 
 
 
@@ -131,7 +131,7 @@ function getWeather(cityName) {
 
     function getForecast(cityName) {
         //var cityName = cityInputEl.value.trim();
-        var weatherQueryurl = "http://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey + "&units=imperial";
+        var weatherQueryurl = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey + "&units=imperial";
 
         fetch(weatherQueryurl)
 
